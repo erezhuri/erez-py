@@ -1,0 +1,2 @@
+Failed to init FIXation
+ERROR: AddressSanitizer:

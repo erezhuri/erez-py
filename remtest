@@ -1,0 +1,107 @@
+
+## show all lps and their connectivity status
+
+status()
+{
+(echo "clear"; echo "fs"; sleep 1;) | telnet localhost 60055 > /tmp/remtest_status  
+cat /tmp/remtest_status
+#verify_status
+}
+
+
+## randomly find an active lp and provide info for it
+info()
+{
+status
+alllps=`cat /tmp/remtest_status|egrep -v "^[a-z]|^[A-Z]|>" |awk ' { print $1 }'|wc -l`
+rand=`echo $(( ( RANDOM % $alllps )  + 1 ))`
+lp=` cat /tmp/remtest_status|egrep -v "^[a-z]|^[A-Z]|>" |awk ' { print $1 }' |grep . -n |egrep "^$rand:"|awk -F\: ' { print $2} '`
+(echo "clear"; echo "info $lp"; sleep 2;) | telnet localhost 60055
+#verify_lpinfo
+}
+
+## randomly display top of book
+
+topofbook()
+{
+curr[1]='eur';
+curr[2]='gbp';
+curr[3]='jpy';
+curr[4]='aud';
+rand=`echo $(( ( RANDOM % 4 )  + 1 ))`
+(echo "clear"; echo "afr ${curr[$rand]}"; sleep 3;) | telnet localhost 60055
+#verify_book
+}
+
+## randomly display full book
+
+books()
+{
+curr[1]='eur';
+curr[2]='gbp';
+curr[3]='jpy';
+curr[4]='aud';
+rand=`echo $(( ( RANDOM % 2 )  + 1 ))`
+(echo "clear"; echo "afr ^${curr[$rand]}"; sleep 5;) | telnet localhost 60055
+#verify_full_book
+}
+
+## randomly trade the instructions
+
+trade()
+{
+
+#please add the trades you like to be exercised in random
+
+trad[1]='buy fxall eurusd 1m 1.38p limit ioc';
+trad[2]='sell gs eurjp 3m 135 limit day';
+trad[3]='selvv bnpp eurjp 3m ioc';
+
+rand=`echo $(( ( RANDOM % 2 )  + 1 ))`
+(echo "clear"; echo "${trad[$rand]}"; sleep 3;) | telnet localhost 60055
+#verify_trade
+}
+
+
+
+# the  set of soubroutines below/above help to test the FIXation envitonment #
+# two ways are appearing for that. 1) randlomly test issues. 2) specifically #
+# test the things related to certain Jira items,  for example                #
+# Please note, that what is tested is easily modified via chaning the items  #
+# strings of arrya, right before the command is exectuted.                   #
+# As indicated, either random, or fixed execeution is possible, by restrictin#
+# the RANDMO number generator with each command                              #
+
+#veryfication commands can be added to test exactly type of things one would #
+#like to test. These verification routes can be written in any language      #
+# and called right after the completion of each telnet command               #
+# for verification to be done independently of telnet session, which terminates#
+#immediately after execution, on may want to direct each command out put to #
+#file and process with a processor of his/her choice
+
+###################################    MAIN   #############################
+
+#!/bin/bash
+
+case "$1" in 'start')
+echo "remtest"
+;;
+'books')
+books
+;;
+'trade')
+trade
+;;
+'topofbook')
+topofbook
+;;
+'info')
+info
+;;
+'status')
+status
+;;
+'help')
+echo "Usage: $0 [status| info |books |topofbook |trade ]"
+;;
+esac

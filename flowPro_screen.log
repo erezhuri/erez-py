@@ -1,0 +1,28 @@
+
+
+FIXation (C) 2015-2016 Fluent Trade Technologies Ltd.
+Flowpro began.
+arg 0 = /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/bin/release/flowpro
+arg 1 = /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/flowpro/cfg/testing/2sides/stream_mt.cfglist
+
+Dumping FIXation's args:
+FIXation arg 0 = /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/flowpro/cfg/testing/2sides/app.cfg
+FIXation arg 1 = /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/flowpro/cfg/testing/2sides/risk.cfg
+FIXation arg 2 = /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/flowpro/cfg/testing/2sides/vpn.cfg
+FIXation arg 3 = /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/flowpro/cfg/testing/2sides/fhs.cfg
+FIXation arg 4 = /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/flowpro/cfg/testing/2sides/flowpro.cfg
+FIXation arg 5 = /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/flowpro/cfg/testing/2sides/fstream1to1.cfg
+
+
+Initializing FIXation ...
+cm_log is located in the current execution folder.file is called: cm_log
+execution location: /home/jenkins/workspace/FIXation-FlowPro-Test/623
+execution file: /home/jenkins/workspace/FIXation-tags-CentOS7/FIXation/bin/release/flowpro
+Version number: 3.6
+
+FIXation expiry date: None
+
+Failed to init FIXation ==> exiting. rc = ERR_INIT_TIMEOUT
+Shutting down... 
+Waiting for feed handlers to cancel orders and disconnect...
+
