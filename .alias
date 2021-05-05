@@ -1,0 +1,192 @@
+alias a alias
+alias -                 less -i
+alias --                kate
+alias e                 'xemacs \!* &'
+alias ge                'gedit \!* &'
+alias cp                'cp -iv'
+alias mv                'mv -i'
+alias loadalias         'source ~/.alias '
+alias l                 ls -lhF --color=auto
+alias ll                ls -lhd --group-directories-first
+alias md                mkdir
+alias del               'mv'
+alias rd                rmdir
+alias c                 clear
+alias h                 history
+alias psu               ps u
+alias cgrep             'grep --color=auto \!*'
+alias g                 cgrep -i
+alias HR               
+'/homes/renen/work/testTools/utilities/hours/homeOrGnome.py 535 \!*'
+alias ph                'lynx
+http://eustace.lan/hr/templates/phoneBook.php -crawl -dump | grep -i
+--color'
+alias man               'man -a'
+
+alias cdw               'cd ~/work/'
+alias cdg               'cd ~/Gentex/'
+alias cdc3              'cd ~/CADS3P/'
+alias cdc4              'cd ~/CADS4/'
+alias cdm               'cd ~/MBK/'
+alias cde               'cd ~/Emulations/'
+alias cds               'cd ~/Scripts/'
+alias cdmulti           'cd
+/usr/local/greenhills/mips/linux86/lib/mipsl_m32'
+alias face              '/mobileye/shared/scripts/face.py \!* '
+
+alias c2l               /mobileye/shared/Tools/Mdb/general/clipToLocation.py
+alias c2FullPath        /mobileye/shared/Tools/Mdb/general/clipToFullPath.py
+alias clipshow         
+'/homes/swlab/dev/samples/clipshow/bin/linux/clipshow --show Gen Sec Ex
+Adap -p --clip \!* &'
+alias HRclipshow       
+'/homes/swlab/deliver/sw/2A00/5/ME.Develop/swsdk/rel/samples/clipshow/bin/linux/clipshow
+-p --show Col --bml off --clip \!* &'
+alias showTrack         '/mobileye/shared/Tools/showTrack.py/showTrack.py'
+alias clip2fs           
+'/mobileye/shared/Tools/testTools/general/clip2fs.py \!*'
+alias shires            'showTrack -c
+~/showTrack.py/configurations/Players/emp.config --highres -r "*/*emp2" '
+alias extractHere       '/homes/yoelg/Scripts/Linux/extractETC.sh'
+alias outclip           
+'/mobileye/trackfiles/Pedestrians/AlonData/Tools/clipDB/outClip.py \!*'
+alias dropbox           'rsync -va local@drop-box:/dropbox/erez/ .'
+alias dropboxh          'rsync -va local@drop-box:/dropbox/erez/
+/mobileye/CADS4/Temp/erezh'
+
+alias mount             'gnome-mount -dvb /dev/sdb1'
+alias unmount           'gnome-umount -dvb /dev/sdb1'
+
+alias clone             'bk clone
+ssh://repository:/home/mobileye/users/BKrepository/\!* '
+alias tConf             'source `mbk
+root`/ME.Develop/BuildSys/TreeConfig.sh \!*; cd -'
+alias evall             'eval
+'/mobileye/mbkrepository/curr-vmp-sdk/VMP/set_env.py'\!*'
+
+alias fff               '/mobileye/system/scripts/free-moz-lock.sh f'
+alias ftb               '/mobileye/system/scripts/free-moz-lock.sh t'
+alias feclipse          'rm ~/workspace/.metadata/.lock'
+alias cleanAgenda       'rm ../brain/*tmp*; rm ../brain/*pyc*; rm
+../brain/*init*'
+alias status            'cvs status \!* |& g Status'
+alias update            'cvs update -d \!*'
+alias gxt               'xhost +; xon \!* xterm -bg gray'
+alias rootWindow        'xterm -n rootW -bg white -fg black -title
+rootWindow -e su&'
+alias citool            'bk citool & '
+alias bkstatus          'bk changes -R'
+alias changes           'bk changes -L'
+alias revtool           'bk revtool  \!* &'
+alias ssh               'ssh -X \!*'
+alias space             'du -m --max-depth=2 \!* | sort -n'
+alias trktk             '~/technicalStuff/trktk/trktk \!*'
+alias sortBackTrace     /homes/tsachi/myScripts/sortBackTrace.py
+
+alias eclipse_new_proj_from_MEDevelop
+'/mobileye/shared/eclipse/proj-templates/new_eclipse_proj.csh \!*'
+alias eclipse           '/homes/erezh/software/eclipse.helios/eclipse &'
+alias  shmemcheckgsf 'setenv GLIBCPP_FORCE_NEW 1;
+/homes/erann/programs/Valgrind3-install/bin/valgrind --tool=shmemcheck
+--supps=/homes/erann/programs/shmemcheck.gsf/supps --gen=yes \!*
+-sgsf-shmemcheck -sVMPetf -svced-etf -sdmad-etf >& shmem.tmp.val;
+/homes/erann/programs/Valgrind3-install/bin/valgrind --tool=shmemcheck
+--supps=/homes/erann/programs/shmemcheck.gsf/supps --use=yes \!*
+-sgsf-shmemcheck -sVMPetf -svced-etf -sdmad-etf >& shmem.val'
+alias morfix '/mobileye/shared/scripts/morfix \!* '
+
+
+
+
+tcshrc.
+
+
+
+set history = 2000          # History remembered is 2000
+set savehist = (8000 merge) # Save and merge with existing saved
+set histfile = ~/.tcsh_history
+
+#set history = 1200
+#set savehist = 1200
+set GREP_COLOR = 33
+set filec
+set autocorrect
+
+#if ($?REMOTEHOST) then
+#        setenv DISPLAY $REMOTEHOST':'0.0
+#        echo "setting DISPLAY to $DISPLAY"
+#endif
+
+umask 027
+if ($?tcsh) then        # we're running tcsh
+     set autolist matchbeep=nomatch autoexpand autocorrect
+     set fignore=(.o ~)
+      if ($?prompt) then
+           set prompt = "%B< %h %b%m%B %c2>%b "
+     set prompt="%{\033[35m%}< %{\033[1m%}%h
+%{\033[0;35m%}%{\033[1;36m%}%{\033[0;36m%}%{\033[1;32m%}%m
+%{\033[0;32m%}%{\033[1;33m%}%c2%{\033[33m%}%#%{\033[0m%} "
+
+     alias  cwdcmd   'echo -n ""'
+     unset rev rel pat
+     bindkey -k up history-search-backward
+     bindkey -k down history-search-forward
+endif
+
+
+setenv WINEDITOR xemacs
+
+set path = ( \
+     . \
+     /usr/local/greenhills/mips5.0.6/linux86/ \
+#    /usr/local/cross-tools/bin/ \
+#    /opt/bin/ \
+#    /opt/gcc-3.1/bin \
+#    /opt/gcc-2.95.2/bin \
+#    /opt/crosstool/gcc-mingw32-4.2.1/bin \
+#    /usr/mobileye/bitkeeper/\
+     $path \
+#    /usr/local/green-arm-4.0.7/linux86/ \
+#    /usr/local/green-4.0.2/linux86/ \
+     )
+# ~/program/gdb-6.6/gdb \
+
+setenv MATLAB_HOME /usr/local/matlab5
+setenv MATLAB_LIBS
+${MATLAB_HOME}/sys/os/lnx86:${MATLAB_HOME}/extern/lib/lnx86
+
+
+source ~/.alias
+
+unlimit coredumpsize
+
+if (-f ${HOME}/.dir_color) then
+   eval `dircolors ${HOME}/.dir_color`
+endif
+
+#unsetenv MORE
+#unsetenv LESSOPEN
+#setenv GHS_LMWHICH ghs
+#unsetenv CVS_RSH
+#setenv GHS_LMHOST stargorod.me-corp.lan
+#set new = `echo ${HOST} | gawk '{split($0,t,"0") ; print t[1]}'`
+#########
+
+#if (${HOST} == chernomorsk ) then
+#   setenv MOBILEYE_DATA /home/mobileye/images.road
+#endif
+
+#alias mbk /mobileye/shared/Tools/mbk/mbk.py
+
+#bindkey '\e[1;3D' backward-word
+#bindkey '\e[1;3C' forward-word
+#bindkey '^[[3;3~' delete-word
+
+
+#if ($?LD_LIBRARY_PATH) then
+#     setenv LD_LIBRARY_PATH
+#/opt/boost/lib:/usr/lib/libipp-intel:/usr/local/fs2/sysnav/bin/:$LD_LIBRARY_PATH
+#else
+#     setenv LD_LIBRARY_PATH
+#/opt/boost/lib:/usr/lib/libipp-intel:/usr/local/fs2/sysnav/bin/
+#endif
