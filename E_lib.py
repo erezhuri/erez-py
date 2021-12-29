@@ -209,4 +209,5 @@ def TreeConfigCheck(tree = ""):
 
 if(__name__ == "__main__"):
 	color = paintText()      
-	TreeConfigCheck()
+	skull1 = skull("You've Enetered my Domain!")
+	# TreeConfigCheck()
